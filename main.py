@@ -48,7 +48,7 @@ def ejercicio_4():
 
 def ejercicio_5():
     # Integral de 3t^2 - 2t + 4 de 1 a 4
-    print("\nejercicio_5() => Ejercicio 5: Aplicaci´on en fisica")
+    print("\nejercicio_5() => Ejercicio 5: Aplicacion en fisica")
     t = sp.Symbol('t')
     v = 3*t**2 - 2*t + 4
     distancia = sp.integrate(v, (t, 1, 4))
@@ -86,11 +86,34 @@ def ejercicio_9():
     x_vals = np.linspace(0.1, 4, 100)
     graficar_area(f_num, 1, float(sp.E), x_vals, "Ejercicio 9: y = 1/x")
 
+def menu():
+    bandera = True
+    while bandera:
+        print("main() => Menu")
+        print("main() => 1. Ejercicio 3: Propiedades de la integral")
+        print("main() => 2. Ejercicio 4: Integral trigonometrica")
+        print("main() => 3. Ejercicio 5: Aplicacion en fisica")
+        print("main() => 4. Ejercicio 8: Integral exponencial")
+        print("main() => 5. Ejercicio 9: Integral logaritmica")
+        print("main() => 6. Salir")
+
+        opcion = input("main() => Ingrese una opcion: ")
+
+        print(f"main() => Opcion seleccionada: {opcion}")
+
+        if opcion == "1":
+            ejercicio_3()
+        elif opcion == "2":
+            ejercicio_4()
+        elif opcion == "3":
+            ejercicio_5()
+        elif opcion == "4":
+            ejercicio_8()
+        elif opcion == "5":
+            ejercicio_9()
+        elif opcion == "6":
+            bandera=False
 if __name__ == "__main__":
     print("main() => Iniciando\n")
-    ejercicio_3()
-    ejercicio_4()
-    ejercicio_5()
-    ejercicio_8()
-    ejercicio_9()
+    menu()
     print("\nmain() => Completado")
